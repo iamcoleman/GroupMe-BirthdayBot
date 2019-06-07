@@ -3,17 +3,15 @@ import csv
 import datetime
 
 # GroupMe Bot ID
-botID = '6a217147f021186f22b4e1f623'
+# insert your Bot ID here
+botID = '*******************'
 
 # List of names with a birthday on the current date
 birthdayBoys = []
 
 # Current Date
 datetimeObject = datetime.datetime.now()
-#currentDate = str(datetimeObject.month) + "/" + str(datetimeObject.day)
-#testing
-currentDate = '11/11'
-#print(currentDate)
+currentDate = str(datetimeObject.month) + "/" + str(datetimeObject.day)
 
 # Turn birthday-list.csv into a dictionary and create a list of birthday bois
 with open('birthday-list.csv', mode='r') as csv_file:
@@ -22,7 +20,7 @@ with open('birthday-list.csv', mode='r') as csv_file:
         if row['Birthday'] == currentDate:
             birthdayBoys += {row['Full Name']}
 
-# get last names
+# get last names of the birthday bois
 lastNames = []
 if len(birthdayBoys) == 1:
     split = birthdayBoys[0].split(' ')
@@ -32,7 +30,7 @@ elif len(birthdayBoys) > 1:
         split = boi.split(' ')
         lastNames += split[-1:]
 
-# construct text
+# construct message text
 postText = ''
 if len(lastNames) == 1:
     postText = 'Happy Birthday to Brother ' + lastNames[0]
