@@ -3,7 +3,7 @@ import csv
 import datetime
 
 # GroupMe Bot ID
-botID = '036100fed211ab373d094c6087'  # insert your Bot ID here
+botID = '****************************'  # insert your Bot ID here
 
 # List of names with a birthday on the current date
 birthdayBoys = []
